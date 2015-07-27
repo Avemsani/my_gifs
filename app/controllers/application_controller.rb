@@ -4,15 +4,65 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def show
-    @science = Science. find_by_id(params['id']) 
+    @science = Science.find_by_id(params['id']) 
     
-  
-   
-  
-    render 'show'
   
   
 end
+  def new
+  end
+  
+  def create
+    
+    s =Science.new 
+    s.caption=params['caption']
+    s.url =params['url']
+    s.title =params['title']
+    s.save
+    
+    redirect_to "/blah/#{s.id}"
+    
+  end
+  
+  
+  def edit
+    @science = Science.find_by_id(params["id"])
+    
+    
+    
+  end
+  
+  def update
+    s = Science.find_by_id(params['id'])
+    s.url = params['url']
+    s.caption = params['caption']
+    s.save
+    
+     redirect_to "/blah/#{s.id}"
+    
+    
+    
+    
+    
+    
+  end
+  
+  
+  
+  
+  
+    
+    
+    
+ 
+    
+  
+  
+  
+  
+  
+  
+  
   
 end
 

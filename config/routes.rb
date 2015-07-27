@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
   get '/blah/:id' => 'application#show'
-  get '/blah/1'=> 'application#first'
-get '/blah/2' => 'application#second'
-  get '/blah/3' => 'application#third'
+  get '/new_science' => 'application#new'
+  get '/create_science' => 'application#create'
+  get '/blah/:id/edit' => 'application#edit'
+  get '/blah/:id/update_science' => 'application#update'
+  
 end
 
