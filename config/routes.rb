@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/create_science' => 'application#create'
   get '/blah/:id/edit' => 'application#edit'
   get '/blah/:id/update_science' => 'application#update'
+  get '/blah/:id/delete' => 'application#delete'
+  get '/blah' => 'application#index'
+  
+  
   
 end
 

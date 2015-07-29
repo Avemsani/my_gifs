@@ -5,15 +5,12 @@ class ApplicationController < ActionController::Base
 
   def show
     @science = Science.find_by_id(params['id']) 
-    
+  end
   
-  
-end
   def new
   end
   
-  def create
-    
+  def create  
     s =Science.new 
     s.caption=params['caption']
     s.url =params['url']
@@ -21,51 +18,41 @@ end
     s.save
     
     redirect_to "/blah/#{s.id}"
-    
   end
   
   
   def edit
     @science = Science.find_by_id(params["id"])
-    
-    
-    
   end
   
   def update
     s = Science.find_by_id(params['id'])
     s.url = params['url']
     s.caption = params['caption']
+    s.title =params['title']
     s.save
     
      redirect_to "/blah/#{s.id}"
-    
-    
-    
-    
-    
-    
   end
   
-  
-  
-  
-  
-    
-    
-    
- 
-    
-  
-  
-  
-  
+  def delete
+    s = Science.find_by_id(params['id'])
+   
+    s.delete
+    redirect_to "/blah"
+  end
+
+
+
+    def index
+       @sciences = Science.all
+      
+    end
   
   
   
   
 end
-
 
 
 
