@@ -1,0 +1,18 @@
+
+<ul>
+<% @sciences.each do |science| %> 
+
+  <li><%= science.title %>
+  <a href="/blah/<%= science.id%>"> show the page. </a> &spades;
+  <a href="/blah/<%= science.id%>/edit"> edit </a> &spades;
+  <a href="/blah/<%= science.id%>/delete"> delete </a>
+    
+  
+ </li>
+  
+<%  end %> 
+  
+</ul>
+
+
+
